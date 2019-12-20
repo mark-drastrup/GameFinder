@@ -11,6 +11,9 @@ export default {
   name: "app",
   components: {
     AppHeader
+  },
+  mounted() {
+    this.$store.dispatch("loadData");
   }
 };
 </script>
