@@ -10,10 +10,12 @@ Vue.use(VueAxios, axios);
 Vue.axios.defaults.baseURL = process.env.VUE_APP_BASE_URL;
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    latestReleases: []
+  },
   mutations: {
-    getLatestReleases() {
-      console.log("mutations");
+    getLatestReleases(store, data) {
+      store.latestReleases = data;
     }
   },
   actions: {
@@ -27,8 +29,7 @@ export default new Vuex.Store({
       const response = await Vue.axios.get(
         `https://api.rawg.io/api/games?dates=${startOfMonth},${endOfMonth}&platforms=18,1,7,4`
       );
-      console.log("this is data", response.data.results);
-      commit("getLatestReleases");
+      commit("getLatestReleases", response.data.results);
     }
   },
   modules: {}
