@@ -1,27 +1,16 @@
 <template>
-  <section class="home">
-    <sidebar />
-    <home-main />
-  </section>
+  <main class="home">
+    <p>Home main</p>
+  </main>
 </template>
 
 <script>
-import Sidebar from "@/components/home/Sidebar.vue";
-import HomeMain from "@/components/home/Main.vue";
 export default {
-  name: "home",
-  components: {
-    Sidebar,
-    HomeMain
-  }
+  name: "home"
 };
 </script>
 
 <style lang="scss" scoped>
 .home {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  grid-template-rows: 1fr;
-  align-items: stretch;
 }
 </style>
