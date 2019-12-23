@@ -1,5 +1,7 @@
 <template>
-  <aside></aside>
+  <aside>
+    <p>sidebar</p>
+  </aside>
 </template>
 
 <script>

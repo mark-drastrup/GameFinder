@@ -1,27 +1,34 @@
 <template>
-  <section class="home">
-    <sidebar />
-    <home-main />
-  </section>
+  <main class="home">
+    <h1>Latest Releases</h1>
+    <div class="home__releases">
+      <latest-release v-for="game in latestReleases" :key="game.id" :game="game" />
+    </div>
+  </main>
 </template>
 
 <script>
-import Sidebar from "@/components/home/Sidebar.vue";
-import HomeMain from "@/components/home/Main.vue";
+import latestRelease from "@/components/LatestRelease.vue";
 export default {
   name: "home",
   components: {
-    Sidebar,
-    HomeMain
+    latestRelease
+  },
+  computed: {
+    latestReleases() {
+      return this.$store.state.latestReleases;
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .home {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  grid-template-rows: 1fr;
-  align-items: stretch;
+  padding: 15px;
+}
+
+.home__releases {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>

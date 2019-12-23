@@ -1,19 +1,24 @@
 <template>
   <div id="app">
     <app-header />
-    <router-view />
+    <section class="app__content">
+      <sidebar />
+      <router-view />
+    </section>
   </div>
 </template>
 
 <script>
 import AppHeader from "@/components/Header.vue";
+import Sidebar from "@/components/Sidebar.vue";
 export default {
   name: "app",
   components: {
-    AppHeader
+    AppHeader,
+    Sidebar
   },
   mounted() {
-    this.$store.dispatch("loadData");
+    this.$store.dispatch("getLatestReleases");
   }
 };
 </script>
@@ -34,5 +39,10 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 50px 1fr;
   align-items: stretch;
+}
+
+.app__content {
+  display: grid;
+  grid-template-columns: 200px 1fr;
 }
 </style>
