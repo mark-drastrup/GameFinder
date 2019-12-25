@@ -1,11 +1,13 @@
 <template>
   <div class="game">
-    <div class="game__imgwrapper">
-      <img :src="game.background_image" :alt="game.name" class="game__img" />
-    </div>
-    <div class="game__caption">
-      <p>{{game.name}}</p>
-    </div>
+    <router-link :to="`/games/${game.id}`">
+      <div class="game__imgwrapper">
+        <img :src="game.background_image" :alt="game.name" class="game__img" />
+      </div>
+      <div class="game__caption">
+        <p>{{game.name}}</p>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -41,5 +43,10 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 </style>
