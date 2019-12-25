@@ -1,9 +1,17 @@
 <template>
-  <p>Game info</p>
+  <div>
+    <p>Game info</p>
+    <p>{{game.name}}</p>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "GameInfo",
+  props: {
+    game: Object
+  }
+};
 </script>
 
 <style>

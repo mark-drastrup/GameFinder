@@ -1,6 +1,6 @@
 <template>
   <div class="game">
-    <router-link :to="`/games/${game.id}`">
+    <router-link :to="{ name: 'games', params: {id: game.id, game:game } }">
       <div class="game__imgwrapper">
         <img :src="game.background_image" :alt="game.name" class="game__img" />
       </div>
