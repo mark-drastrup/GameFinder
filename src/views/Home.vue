@@ -30,5 +30,6 @@ export default {
 .home__releases {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 </style>
