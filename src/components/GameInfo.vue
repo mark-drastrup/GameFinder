@@ -10,6 +10,19 @@ export default {
   name: "GameInfo",
   props: {
     game: Object
+  },
+  created() {
+    this.getSelectedGame();
+  },
+  methods: {
+    getSelectedGame() {
+      this.$store.dispatch("getSelectedGame", this.game.id);
+    }
+  },
+  computed: {
+    selectedGame() {
+      return this.$store.state.selectedGame;
+    }
   }
 };
 </script>
