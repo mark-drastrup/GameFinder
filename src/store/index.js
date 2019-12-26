@@ -7,7 +7,7 @@ import moment from "moment";
 Vue.use(Vuex);
 Vue.use(VueAxios, axios);
 
-Vue.axios.defaults.baseURL = process.env.VUE_APP_BASE_URL;
+Vue.axios.defaults.baseURL = "https://api.rawg.io/api/";
 
 export default new Vuex.Store({
   state: {
@@ -31,15 +31,12 @@ export default new Vuex.Store({
         .endOf("month")
         .format("YYYY-MM-DD");
       const response = await Vue.axios.get(
-        `https://api.rawg.io/api/games?dates=${startOfMonth},${endOfMonth}&platforms=18,1,7,4`
+        `games?dates=${startOfMonth},${endOfMonth}&platforms=18,1,7,4`
       );
       commit("getLatestReleases", response.data.results);
     },
     async getSelectedGame({ commit }, id) {
-      const response = await Vue.axios.get(
-        `https://api.rawg.io/api/games/${id}`
-      );
-      console.log("This is selected game", response);
+      const response = await Vue.axios.get(`games/${id}`);
       commit("getSelectedGame", response.data);
     }
   },
