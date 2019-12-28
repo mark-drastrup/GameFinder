@@ -2,6 +2,7 @@
   <div>
     <p>Game info</p>
     <p>{{game.name}}</p>
+    <p>{{selectedGame.description_raw}}</p>
   </div>
 </template>
 
