@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <p>Game info</p>
+  <div class="game">
+    <div class="game__herowrapper">
+      <img :src="selectedGame.background_image" :alt="game.name" />
+    </div>
     <p>{{game.name}}</p>
     <p>{{selectedGame.description_raw}}</p>
   </div>
@@ -28,5 +30,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.game__herowrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
 </style>
