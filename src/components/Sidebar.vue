@@ -4,15 +4,15 @@
       <li>Action</li>
       <li>Adventure</li>
       <li>Indie</li>
-      <li>RPG <i class="fas fa-dragon"></i></li>
-      <!-- <li>Shooter</li> -->
-      <li>Strategy <i class="fas fa-chess-knight"></i></li>
-      <li>Puzzle <i class="fas fa-puzzle-piece"></i></li>
-      <li>Arcade <i class="fas fa-rocket"></i></li>
-      <li>Platform <i class="fa fa-running"></i></li>
-      <li>Racing <i class="fas fa-car"></i></li>
-      <li>Sports <i class="fas fa-futbol"></i></li>
-      <li>Fighting <i class="far fa-hand-rock"></i></li>
+      <li>RPG</li>
+      <li>Shooter</li>
+      <li>Strategy</li>
+      <li>Puzzle</li>
+      <li>Arcade</li>
+      <li>Platform</li>
+      <li>Racing</li>
+      <li>Sports</li>
+      <li>Fighting</li>
     </ul>
   </aside>
 </template>
